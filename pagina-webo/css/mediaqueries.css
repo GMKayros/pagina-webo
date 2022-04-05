@@ -1,0 +1,16 @@
+/*USAR UNA SOLA HOJA DE CSS*/
+
+@media screen and (max-width: 600px){
+    .navbar{
+        position: relative;
+    }
+    .navbar .shop{
+        display: none;
+    }
+    .navbar .menu-bar{
+        display: block;
+        grid-column: 8/9;
+        font-size: 30px;
+        cursor: pointer;
+    }
+} /*esto se aplica a dispositivos que van de 0 a 600px*/

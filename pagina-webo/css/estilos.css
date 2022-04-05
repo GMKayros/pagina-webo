@@ -1,0 +1,217 @@
+
+/*esto afecta a todos los párrafos*/
+/*La ventaja de esto es que linkeando a cualquier documento con el archivo css todos los párrafos tendrán el mismo estilo.*/
+p{
+    color: green !important;
+}
+p{
+    color: blue;
+}
+
+/* el asterisco es un selector universal y AFECTA TODO*/
+/* se utiliza principalmente para resetear formatos predeterminados de cada navegador, luego permitiendo cambiar los valores en cada etiqueta de forma manual*/
+
+*{
+padding-left: 10px;
+
+}
+
+/*si dos parrafos tienen ordenes contradictorias, prima la última. A menos que una de ellas tenga el atributo !important*/
+
+/*bordesRedondeados es una clase*/
+.bordesRedondeados{
+
+    border: solid 5px black;
+    border-radius: 20px;
+}
+
+/*encabezados es un id*/
+#encabezados{
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: 50px;
+color: rgb(97, 16, 16);
+
+}
+
+ol{
+    list-style-type: none;
+
+}
+
+ul{
+    list-style-type: none;
+    
+}
+
+#principal{
+    padding: 15px;
+    background-color: antiquewhite;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Metodología BEM*/
+
+.contenedor{
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    }
+
+.tarjeta{
+    background-color: aquamarine;
+    padding: 20px;
+    }
+
+.tarjeta__miniatura{
+    width: 650px;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.tarjeta__imagen{
+    width: 80%;
+    border-radius: 20px;
+}
+
+.tarjeta__titulo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    margin-bottom: 5%;
+}
+
+.tarjeta__enlace{
+    color: black;
+}
+
+.tarjeta__parrafo{
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+
+.boton{
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: rgb(98, 23, 23);
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.boton__texto{
+    color: white;
+    font-size: 25px;
+}
+
+/*Modificador BEM (copiando el boton--alternativo y colocándolo al lado de .boton en el html, se utiliza este segundo formato.*/
+
+.boton--alternativo{
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+font-size: 30px;
+font-weight: bold;
+}
+
+.caja1{
+    background-color: aqua;
+    width: 250px;
+    height: 150px;
+    margin: 30px; /*si solo pongo margin (sin seleccionar orientación, afecta a los 4*/
+    padding: 20px 15px 30px 40px; /*en el sentido de las agujas del reloj: arriba, derecha, abajo, izquierda*/
+    font-size: 30px;
+    border: solid 1px red;
+    overflow:scroll; /*oculta el texto que se sale de la caja. En este caso pone barras de scroll.*/
+
+}
+
+.encabezadoAlina{  /*convierte un bloque en inline o viceversa*/
+    display: inline-block;
+}
+
+.padre{ /*deja fijo el cuadro sin importar el scroll*/
+    position: fixed;
+    top: 40px;
+    left: 200px;
+    border: solid 2px black;
+    padding: 30px;
+}
+
+.flex-container{
+    width: 1000px;
+    height: 700px;
+    padding: 0%;
+    background-color: aqua;
+    margin: auto;
+    display: flex; 
+    flex-direction: row; /*para colocarlo horizontal o vertical*/
+    flex-wrap: wrap; /*Sirve para colocar los elementos en la mesa de trabajo, nowrap (por defecto) permite agregar infinitas columnas (o filas), agregando un scroll a la página)*/
+    justify-content: flex-start; /*para alinear las rows o columns*/
+    align-items: flex-start;
+
+}
+
+.flex-item{
+    width: 200px;
+    height: 200px;
+    background-color: coral;
+    color: white;
+}
+
+.flex-item:nth-child(odd){ /*odd=impares*/
+    background-color: forestgreen;
+    align-self: center; /*permite trabajar cada item por separado*/
+    
+}
+
+.grid-container{
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 200px 400px;
+    grid-template-rows: 200px 200px 200px 200px;
+    justify-items: none; /*alinea el contenido de las celdas horizontalmente*/
+    align-items: none; /*alinea el contenido de las celdas verticalmente*/
+    column-gap: 10px; /*espaciado entre columnas*/
+    row-gap: 10px; /*espaciado entre filas*/
+    
+}
+.grid-container div{
+    border: solid 1px black;
+    background-color: chocolate;
+}
+.hijo{ /*sirve para controlar cada celda de forma independiente*/
+    justify-self: start;
+    align-self: start;
+}
+
+#grilla{
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 20% auto 15%;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-areas:   "nav   header   header"
+                           "nav   main     aside"
+                           "nav   main     aside"
+    ;
+    column-gap: 10px; /*espaciado entre columnas*/
+    row-gap: 10px; /*espaciado entre filas*/
+}
+.nav{
+    background-color: brown;
+    grid-area: nav;
+}
+.header{
+    background-color: aquamarine;
+    grid-area: header;
+}
+.main{
+    background-color: blueviolet;
+    grid-area: main;
+}
+.aside{
+    background-color:cornflowerblue;
+    grid-area: aside; 
+}
+
+.tablacentrada{
+    text-align: center;
+    align-items: center;
+}
